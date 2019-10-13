@@ -22,5 +22,13 @@ Pohms - resistor or not resistor detector
   pohms
   ```
 
-  
+
+
+## Explore
+
+- Run `ipython`
+  ```bash
+  poetry run ipython
+  ```
+
 
