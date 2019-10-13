@@ -10,6 +10,7 @@ def main_cli():
 
 
 @main_cli.command()
+@click.argument('path', required=True)
 def detect():
     click.echo('Hello there!')
 
