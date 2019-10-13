@@ -1,11 +1,6 @@
 Pohms - resistor or not resistor detector
 
 
-## Sources
-
-
-
-
 ## Installation
 
 - Install Poetry
