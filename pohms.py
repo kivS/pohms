@@ -10,10 +10,12 @@ def main_cli():
 
 
 @main_cli.command()
-@click.argument('path', required=True)
-def detect():
+@click.option('--path', help='Image or images folder location', required=True)
+def detect(path):
+    '''
+        Detect whether an image or a group of images are resistors or not.
+    '''
+    
     click.echo('Hello there!')
 
 
-if __name__ == '__main__':
-    main_cli()
