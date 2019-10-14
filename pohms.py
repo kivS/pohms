@@ -22,6 +22,8 @@ def detect(path):
         Detect whether an image or a group of images are resistors or not.
     '''
 
+    click.echo('Starting prediction...')
+
     # setting cpu as default for inference
     defaults.device = torch.device('cpu')
 
