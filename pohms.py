@@ -10,12 +10,15 @@ def main_cli():
 
 
 @main_cli.command()
-@click.option('--path', help='Image or images folder location', required=True)
+@click.option(
+    '--path',
+    help='Image or folder location',
+    required=True,
+    type=click.Path()
+)
 def detect(path):
     '''
         Detect whether an image or a group of images are resistors or not.
     '''
-    
+
     click.echo('Hello there!')
-
-
