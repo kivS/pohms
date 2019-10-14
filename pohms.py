@@ -17,7 +17,13 @@ def main_cli():
     required=True,
     type=click.Path()
 )
-def detect(path):
+@click.option(
+    '--model',
+    help='Path of pytorch model to use',
+    default='export.pkl',
+    type=click.Path()
+)
+def detect(path, model):
     '''
         Detect whether an image or a group of images are resistors or not.
     '''
@@ -28,7 +34,7 @@ def detect(path):
     defaults.device = torch.device('cpu')
 
     # load model
-    learner = load_learner(path='.', file='resnet34_0.pkl')
+    learner = load_learner(path='.', file=model)
 
     # open image
     img = open_image(path)
