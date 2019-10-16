@@ -42,13 +42,10 @@ def detect(path, model, img_cat_bin):
     try:
         # load model
         learner = load_learner(path='.', file=model)
-    except FileNotFoundError as e:
-        click.echo(e, err=True)
-        return
 
-    try:
         # open image
         img = open_image(path)
+
     except FileNotFoundError as e:
         click.echo(e, err=True)
         return
