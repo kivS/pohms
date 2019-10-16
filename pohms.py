@@ -26,7 +26,7 @@ def main_cli():
     type=click.Path()
 )
 @click.option(
-    '--img_cat_bin',
+    '--img-cat-bin',
     help='Bin location to display image on the commandline',
     default=Path.home() / '.iterm2' / 'imgcat',
     type=click.Path()
@@ -36,16 +36,24 @@ def detect(path, model, img_cat_bin):
         Detect whether an image or a group of images are resistors or not.
     '''
 
-    click.echo('Starting prediction for:')
-
     # setting cpu as default for inference
     defaults.device = torch.device('cpu')
 
-    # load model
-    learner = load_learner(path='.', file=model)
+    try:
+        # load model
+        learner = load_learner(path='.', file=model)
+    except FileNotFoundError as e:
+        click.echo(e, err=True)
+        return
 
-    # open image
-    img = open_image(path)
+    try:
+        # open image
+        img = open_image(path)
+    except FileNotFoundError as e:
+        click.echo(e, err=True)
+        return
+
+    click.echo('Starting prediction for:')
 
     # display image on the shell using imgcat from iterm2
     os.system(f'{img_cat_bin} {path}')
