@@ -56,8 +56,9 @@ def detect(path, model, img_cat_bin):
     os.system(f'{img_cat_bin} {path}')
 
     # inference
-    pred_class, pred_idx, outputs = learner.predict(img)
+    pred_class, pred_index, probs = learner.predict(img)
 
+    click.echo(f'Data classes: {learner.data.classes} ')
     click.echo(f'prediction: {pred_class} ')
-    click.echo(f'prediction idx: {pred_idx} ')
-    click.echo(f'outputs: {outputs}')
+    click.echo(f'prediction index: {pred_index} ')
+    click.echo(f'Probabilities: {probs}')

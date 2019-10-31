@@ -26,9 +26,12 @@ Pohms - resistor or not resistor detector
 
 ## Explore
 
-- Run `ipython`
+- Run empty `ipython`
   ```bash
   poetry run ipython
   ```
 
-
+- Run `ipython` with loaded info
+  ```bash
+  poetry run ipython -i explore.py 
+  ```
