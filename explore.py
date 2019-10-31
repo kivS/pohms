@@ -1,11 +1,12 @@
 from fastai.vision import open_image, load_learner
 
 # Configs
-MODEL_EXPORT = 'export.pkl'
+MAIN_MODEL = 'models/resnet101-97acc.pkl'
+
 SAMPLE_IMG = 'test_images/1.jpg'
 
 # load pretrained model
-learner = load_learner(path='.', file=MODEL_EXPORT)
+learner = load_learner(path='.', file=MAIN_MODEL)
 
 # load image to be predicted
 img = open_image(SAMPLE_IMG)

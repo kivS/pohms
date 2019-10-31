@@ -22,7 +22,7 @@ def main_cli():
 @click.option(
     '--model',
     help='Path of pytorch model to use',
-    default='export.pkl',
+    default='models/resnet101-97acc.pkl',
     type=click.Path()
 )
 @click.option(
@@ -50,6 +50,7 @@ def detect(path, model, img_cat_bin):
         click.echo(e, err=True)
         return
 
+    click.echo(f'Using model: {model}')
     click.echo('Starting prediction for:')
 
     # display image on the shell using imgcat from iterm2
