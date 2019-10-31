@@ -22,7 +22,7 @@ Pohms - resistor or not resistor detector
   pohms
   ```
 
-- You can also see the help for the detection command with:
+- You can also see the help for the prediction command with:
   ```bash 
   pohms detect --help 
   ```
