@@ -35,3 +35,8 @@ Pohms - resistor or not resistor detector
   ```bash
   poetry run ipython -i explore.py 
   ```
+
+
+## Data aquisition
+
+- [Electronic components images](https://www.onlinecomponents.com/productsearch/)
